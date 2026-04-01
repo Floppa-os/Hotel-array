@@ -7,6 +7,7 @@ print(rooms_1_user)
 print(rooms_2_user)
 print(rooms_3_user)
 while True:
+    temp = 0
     cmd = input("main: ")
     if cmd == "save":
         print(rooms)
@@ -50,13 +51,21 @@ while True:
         print(rooms_3_user)
 # rooms user del
     if cmd == "del rooms_1_user":
-        rooms_1_user.pop()
+        with open("data/old_user.txt", "w") as file:
+            temp = rooms_1_user.pop()
+            file.write(str(temp))
+        temp = rooms_1_user.pop()
         print(rooms_1_user)
     if cmd == "del rooms_2_user":
-        rooms_2_user.pop()
+        with open("data/old_user.txt", "w") as file:
+            temp = rooms_2_user.pop()
+            file.write(str(temp))
+        temp = rooms_2_user.pop()
         print(rooms_2_user)
     if cmd == "del rooms_3_user":
-        rooms_3_user.pop()
+        with open("data/old_user.txt", "w") as file:
+            temp = rooms_3_user.pop()
+            file.write(str(temp))
         print(rooms_3_user)
 # reset
     if cmd == "reset":
